@@ -29,3 +29,19 @@ Criar o método GET:/id (Selecionar um Usuário específico)
 Criar os demais métodos para a rota Usuário
 
 Criar os demais métodos para as outras Rotas
+
+OBS: install node.Js LTE, install MongoDb criando o arquivo
+
+a) criados os diretótios: mkdir c:\data\db e mkdir c:\data\log
+
+b) criado o arquivo mongod.cfg que specifica ambos systemLog.path and storage.dbPath, conforme abaixo
+
+    systemLog:
+        destination: file
+        path: c:\data\log\mongod.log
+    storage:
+        dbPath: c:\data\db
+        
+c) instalar o mongod.cfg => "C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --config "C:\Program Files\MongoDB\Server\3.4\mongod.cfg" --install
+
+d) instalar o MongoDb como sserviço automático => sc.exe create MongoDB binPath= "\"C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe\" --service --config=\"C:\Program Files\MongoDB\Server\3.4\mongod.cfg\"" DisplayName= "MongoDB" start= "auto"
